@@ -169,6 +169,10 @@ ${Developer}
 
 `
 console.log(content)
+fs.writeFileSync("OUTPUTREADME.md",content,function(err){
+    if (err) throw err;
+})
+console.log('OUTPUT readme is generated based on user input (File: OUTPUTREADME.md)')
     })
 }
 // TODO: Create a function to write README file
