@@ -1,7 +1,7 @@
 
-# Readme generator
+# Readme Generator
 ##  Description
-node js app with inquirere
+node js app with inquirer
 ## Table Of Contents
 ----------------------
 * [Installation](#installation)
@@ -15,7 +15,7 @@ node js app with inquirere
 * [Contact](#contact)
 
 ## Installation
-npm i
+npm 1
 
 ## Usage
 Free
@@ -24,10 +24,10 @@ Free
 w3schools
 
 ## Developer
-Sabrina
+Sabrina Elkins
 
 ## GitHub
-[Profile](https://github.com/lal)
+[Profile](https://github.com/sabrinaelkins)
 
 ## License
 ![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)
