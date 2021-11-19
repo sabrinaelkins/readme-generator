@@ -8,13 +8,13 @@ const questions = () => {
     return inquirer.prompt([
         {
             type: 'input',
-            name: 'github',
-            message: 'Input your GitHub user',
+            name: 'email',
+            message: 'Insert your email here',
             validate: nameInput => {
                 if (nameInput) {
                     return true;
                 } else {
-                    console.log('Input your GitHub username');
+                    console.log('Please input your email here');
                     return false;
                 }
             }
@@ -22,6 +22,12 @@ const questions = () => {
     ]
     )
 }
+{
+    type: 'list',
+    name: 'license',
+    message: '',
+    choices: [''],
+},
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
