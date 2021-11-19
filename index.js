@@ -1,5 +1,5 @@
 // TODO: Include packages needed for this application
-const fs = reqiure('fs');
+const fs = require('fs');
 const inquirer = require('inquirer');
 
 // 
@@ -9,7 +9,7 @@ const questions = () => {
     return inquirer.prompt([
         {
             type: 'input',
-            name: 'title',
+            name: 'Title',
             message: 'What is the title of your project?',
             validate: nameInput => {
                 if (nameInput) {
@@ -48,7 +48,7 @@ const questions = () => {
         },
         {
             type: 'input',
-            name: 'Installation instructions',
+            name: 'Installation',
             message: 'Insert istallment instructions here',
             validate: nameInput => {
                 if (nameInput) {
@@ -112,19 +112,64 @@ const questions = () => {
             }
         },
         {
+            type: 'input',
+            name: 'Credits',
+            message: 'Insert credits here.',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please input credits.');
+                    return false;
+                }
+            }
+        },
+        {
             type: 'list',
-            name: 'license',
+            name: 'License',
             message: 'Choose a License',
-            choices: ['MIT','ISC','APACHE2.0', 'GID', 'none'],
+            choices: ['MIT', 'ISC', 'APACHE2.0', 'GID', 'none'],
         }
     ]
-    )
+    ).then(function({Title,Description,Developer,Credits,Installation,Testing,Usage,GitHub,Email,License}){
+            var content = `
+# ${Title}
+##  Description
+${Description}
+## Table Of Contents
+----------------------
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [Developer](#developer)
+* [GitHub](#github)
+* [Testing](#testing)
+* [Email](#email)
+* [License](#license)
+* [Contact](#contact)
+
+## Installation
+${Installation}
+
+## Usage
+${Usage}
+
+## Credits
+${Credits}
+
+## Developer
+${Developer}
+
+## GitHub
+[Profile](https://github.com/${GitHub})
+
+## License
+![GitHub License](https://img.shields.io/badge/license-${License}-blue.svg)
+
+
+`
+console.log(content)
+    })
 }
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
+questions()
